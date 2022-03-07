@@ -1,0 +1,14 @@
+{
+  "name": "vendor_name/Artstore_demo",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": " ",
+  "authors": [
+    {
+      "name": "ellie",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+  }
+}
