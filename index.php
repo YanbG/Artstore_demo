@@ -19,17 +19,7 @@
     }else{
         echo"connected successfully";
     }
+
+    echo"bomb";
 ?>
 
-<?php
-
-$findRecentSQL = "SELECT * FROM artworks ORDER BY timeReleased DESC LIMIT 3";
-$find = mysqli_query($conn, $findRecentSQL);
-for($i = 0; $i < 1; $i++){
-    $each = mysqli_fetch_assoc($find);
-    $recentID[] = $each['artworkID'];
-    $recentFile[] = $each['imageFileName'];
-}
-
-echo"$recentID[0]";
-?>
