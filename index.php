@@ -1,4 +1,4 @@
-<?php session_start();?>
+
 <?php
 
     //get heroku db connection information
