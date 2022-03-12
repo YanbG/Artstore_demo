@@ -15,7 +15,21 @@
     $conn=mysqli_connect($cleardb_server, $cleardb_username,$cleardb_password, $cleardb_db);
 
     echo"bomb";
+    $sql = "SELECT * FROM artworks ORDER BY view DESC LIMIT 3;";
+    $result = mysqli_query($conn,$sql);
+    for($i = 0; $i<3; $i++){
+        $row = mysqli_fetch_assoc($result);
+        $artworkID[]=$row['artworkID'];
+        $title[] = $row['title'];
+        $artist[] = $row['artist'];
+        $date[] = $row['yearOfWork'];
+        $genre[] = $row['genre'];
+        $description[] = $row['description'];
+        $fileName[] = $row['imageFileName'];
+    }
+    echo"$artworkID[0]";
 
+    //test connection
     mysqli_select_db($conn, "artworks");
     if($conn ->connect_error){
         die("connection failed:".$conn->error);
