@@ -13,6 +13,9 @@
 
     //connect to DB
     $conn=mysqli_connect($cleardb_server, $cleardb_username,$cleardb_password, $cleardb_db);
+
+    echo"bomb";
+
     mysqli_select_db($conn, "artworks");
     if($conn ->connect_error){
         die("connection failed:".$conn->error);
@@ -20,6 +23,6 @@
         echo"connected successfully";
     }
 
-    echo"bomb";
+
 ?>
 
