@@ -1,3 +1,4 @@
+<?php session_start();?>
 <?php
 
     //get heroku db connection information
@@ -13,6 +14,17 @@
     //connect to DB
     $conn=mysqli_connect($cleardb_server, $cleardb_username,$cleardb_password, $cleardb_db);
 
-    echo "HI there"
+?>
 
+<?php
+
+$findRecentSQL = "SELECT * FROM artworks ORDER BY timeReleased DESC LIMIT 3";
+$find = mysqli_query($_mysqli, $findRecentSQL);
+for($i = 0; $i < 1; $i++){
+    $each = mysqli_fetch_assoc($find);
+    $recentID[] = $each['artworkID'];
+    $recentFile[] = $each['imageFileName'];
+}
+
+echo"$recentID[0]";
 ?>
