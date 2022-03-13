@@ -1,18 +1,4 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>HI</title>
-</head>
-<body>
-<div>
-    <img>
-    <a href="https://www.artic.edu/iiif/2/a62a08bb-6775-dc38-330e-8fae4271d9a4/full/600,/0/default.jpg"></a>
-    </img>
-</div>
-</body>
-</html>
 
 <?php
 
@@ -28,7 +14,6 @@
 
     //connect to DB
     $conn=mysqli_connect($cleardb_server, $cleardb_username,$cleardb_password, $cleardb_db);
-
 
 //    $sql = "SELECT * FROM artworks ORDER BY view DESC LIMIT 3;";
 //    $result = mysqli_query($conn,$sql);
