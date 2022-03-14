@@ -40,7 +40,9 @@
     ?>
 
     <div>
+        <?php echo"$artworkID[0]"?>
         <img src= "img/<?php echo"$artworkID[0]"?>.jpg">
+    </div>
 </body>
 </html>
 
