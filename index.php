@@ -23,6 +23,24 @@
     <div>
         <a href="https://www.artic.edu/iiif/2/a62a08bb-6775-dc38-330e-8fae4271d9a4/full/600,/0/default.jpg">click me</a>
     </div>
+
+    <?php
+    $sql = "SELECT * FROM artworks ORDER BY view DESC LIMIT 3;";
+    $result = mysqli_query($_mysqli,$sql);
+    for($i = 0; $i<3; $i++){
+        $row = mysqli_fetch_assoc($result);
+        $artworkID[]=$row['artworkID'];
+        $title[] = $row['title'];
+        $artist[] = $row['artist'];
+        $date[] = $row['yearOfWork'];
+        $genre[] = $row['genre'];
+        $description[] = $row['description'];
+        $fileName[] = $row['imageFileName'];
+    }
+    ?>
+
+    <div>
+        <img src= "img/<?php echo"$artworkID[0]"?>.jpg">
 </body>
 </html>
 
