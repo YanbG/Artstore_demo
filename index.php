@@ -26,7 +26,7 @@
 
     <?php
     $sql = "SELECT * FROM artworks ORDER BY view DESC LIMIT 3;";
-    $result = mysqli_query($_mysqli,$sql);
+    $result = mysqli_query($conn,$sql);
     for($i = 0; $i<3; $i++){
         $row = mysqli_fetch_assoc($result);
         $artworkID[]=$row['artworkID'];
