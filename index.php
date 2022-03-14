@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HI</title>
+    <title>Art_Store</title>
 </head>
 <body>
     <?php
