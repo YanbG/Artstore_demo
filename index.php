@@ -32,11 +32,11 @@
             <?php
             if(empty($_SESSION['username'])&&empty($_SESSION['password'])) {
                 if(isset($_SESSION['username']))
-                    echo "successfully logged in，" . $_SESSION['username'] . "<a href='LogOut.php' >log out</a>";
+                    echo "successfully logged in，" . $_SESSION['username'] . "<a href='log_out.php' >log out</a>";
                 else
-                    echo "You are not logged in,<a href='LogInPage.php'>go log in</a>";
+                    echo "You are not logged in,<a href='log_in_page.php'>go log in</a>";
             }else{
-                echo "successfully logged in, welcome:".$_SESSION['username']."<a href='LogOut.php'>log out</a>";
+                echo "successfully logged in, welcome:".$_SESSION['username']."<a href='log_out.php'>log out</a>";
             }
 
             ?>
@@ -45,13 +45,13 @@
             <span id="motto"> tranquility is right under your feet</span></h1>
         <nav class = viewport_header>
             <ul>
-                <li><a href = "Homepage.php">Home</a>
+                <li><a href = "index.php">Home</a>
                 </li>
                 <li><a href = "search.php">Search</a>
                     <span>
                                     </span>
                 </li>
-                <li><a href = "LogInPage.php">Sign_In</a>
+                <li><a href = "log_in_page.php">Sign_In</a>
                     <span>
                                     </span>
                 </li>
