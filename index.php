@@ -51,11 +51,11 @@
                     <span>
                                     </span>
                 </li>
-                <li><a href = "log_in_page.php">Sign_In</a>
+                <li><a href = "log_in_page.php">Sign In</a>
                     <span>
                                     </span>
                 </li>
-                <li><a href="sign_up_page.php">Sign_Up</a>
+                <li><a href="sign_up_page.php">Sign Up</a>
                     <span>
                                     </span>
                 </li>
