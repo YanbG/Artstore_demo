@@ -107,7 +107,7 @@
 
         <img src="img/<?php echo "$artworkID" ?>.jpg" style = "width: 40%; height: 40%; float:left">
 
-        <table style="text-align: left; font-weight: bold">
+        <table style="text-align: left; font-weight: bold; background-color: rgba(0,0,0,0)">
             <style>
                 td{
                     font-size: 12pt;
@@ -141,9 +141,9 @@
             </tr>
             <tr>
                 <td >
-                    <form method="post">
+                    <form method="post" name="addFavs()">
                         <input type="submit" name="addFavs()"
-                               class="button" value="addFavs()"/>
+                               class="button" value="addFavs()"/>  </input>
                     </form>
 
                     <script>
@@ -151,7 +151,7 @@
                             alert("successfuly added to your favs");
                         }
                     </script>
-                    </input></td>
+                  </td>
             <tr>
                 <?php
                 $checkExistenceSQL = "SELECT * FROM wishlist WHERE artworkID = $artworkID AND userID = ".$_SESSION['uid'].";";
