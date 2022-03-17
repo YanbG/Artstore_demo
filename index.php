@@ -43,7 +43,7 @@
             ?>
         </div>
         <h1 style = "padding-top: 200pt" id = "hph1">Art Store
-            <span id="motto"> tranquility is right under your feet</span></h1>
+            <span id="motto"> <a href="index.html">click to see a more advanced UI</span></h1>
         <nav class = viewport_header>
             <ul>
                 <li><a href = "index.php">Home</a>

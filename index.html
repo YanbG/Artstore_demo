@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <title>Digital Collection</title>
+
+    <link href="stylesheet/main.css" rel="stylesheet" type="text/css"/>
+    <link href="stylesheet/print.css" rel="stylesheet" type="text/css" media="print"/>
+    <link href="style.css" rel="stylesheet">
+
+
+    <link rel="alternate" hreflang="de" href="https://sammlung.staedelmuseum.de/de"/>
+
+    <script type="text/javascript" src="scripts/vendor.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+
+
+</head>
+<body class="isHomepage" data-message="[]">
+
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-KRNMP9" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>
+    dataLayer = [{}];
+</script>
+<script>
+    (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KRNMP9');
+</script>
+
+<video autoplay muted loop id = "bgv" style="opacity: .5">
+    <source src = "background/1.mp4" type="video/mp4">
+</video>
+
+<header class="dsHeader">
+
+    <div class="dsHeader__container container">
+        <div class="dsHeader__contentWrap">
+            <div class="dsHeader__content branding current">
+                <div class="dsHeaderBranding">
+                    <div class="dsHeaderBranding__content default container current">
+                        <a class="dsHeaderBranding__link" href="index.html">
+                            <span class="dsHeaderBranding__left">Art</span>
+                            <span class="dsHeaderBranding__right">Collection</span>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="dsHeader__action">
+                    <!--                        <a class="dsHeader__actionButton language" href="/de">-->
+                    <!--                            <span class="dsHeader__actionButtonText">DE</span>-->
+                    <!--                        </a>-->
+
+                    <button class="dsHeader__actionButton search" data-action="search">
+                        <svg class="dsHeader__actionButtonImage search" width="40" height="40" viewBox="0 0 40 40">
+                            <path fill="none" stroke="#EDEAE3" stroke-width="3" d="M23.664 23.707c-1.543 1.52-3.66 2.46-5.998 2.46-4.718 0-8.54-3.824-8.54-8.542 0-4.717 3.822-8.542 8.54-8.542s8.54 3.825 8.54 8.542c0 2.38-.972 4.533-2.542 6.082l7.21 7.21-7.21-7.21z"></path>
+                        </svg>
+
+                        <span class="dsHeader__actionButtonCaption">Search</span>
+                    </button>
+
+                    <button class="dsHeader__actionButton menu" data-action="menu">
+                        <svg class="dsHeader__actionButtonImage menu" width="40" height="40" viewBox="0 0 40 40">
+                            <path fill="#EDEAE3" d="M2 28h35v3H2v-3zm0-10h35v3H2v-3zM2 8h35v3H2V8z"></path>
+                        </svg>
+
+                        <svg class="dsHeader__actionButtonImage close" width="40" height="40" viewBox="0 0 40 40">
+                            <path fill="none" stroke="#EDEAE3" stroke-width="3" stroke-linecap="square" d="M20 20L9.5 9.5 20 20 9.5 30.5 20 20zm0 0l10.5 10.5L20 20 30.5 9.5 20 20z"></path>
+                        </svg>
+
+                        <span class="dsHeader__actionButtonCaption">Menu</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="dsHeader__content search" data-url-fulltext="/en/search/1/prompt/global" data-url-keyword="/en/search/1/prompt/facets" data-periods="{&quot;min&quot;:1290,&quot;max&quot;:2018,&quot;years&quot;:{&quot;1290-01-01T00:00:00Z&quot;:0.012639003479138967,&quot;1300-01-01T00:00:00Z&quot;:0.05055601391655587,&quot;1310-01-02T00:00:00Z&quot;:0.0309591093811518,&quot;1320-01-02T00:00:00Z&quot;:0.04729082072918186,&quot;1330-01-02T00:00:00Z&quot;:0.012639003479138967,&quot;1340-01-02T00:00:00Z&quot;:0.0309591093811518,&quot;1350-01-02T00:00:00Z&quot;:0.01787425013507906,&quot;1360-01-02T00:00:00Z&quot;:0.028261670947211073,&quot;1370-01-02T00:00:00Z&quot;:0.028261670947211073,&quot;1380-01-02T00:00:00Z&quot;:0.03574850027015812,&quot;1390-01-02T00:00:00Z&quot;:0.03574850027015812,&quot;1400-01-02T00:00:00Z&quot;:0.03574850027015812,&quot;1410-01-03T00:00:00Z&quot;:0.043782792365816996,&quot;1420-01-03T00:00:00Z&quot;:0.04729082072918186,&quot;1430-01-03T00:00:00Z&quot;:0.05362275040523718,&quot;1440-01-03T00:00:00Z&quot;:0.1049874479033203,&quot;1450-01-03T00:00:00Z&quot;:0.0379170104374169,&quot;1460-01-03T00:00:00Z&quot;:0.059282181107016566,&quot;1470-01-03T00:00:00Z&quot;:0.0703709931528346,&quot;1480-01-03T00:00:00Z&quot;:0.059282181107016566,&quot;1490-01-03T00:00:00Z&quot;:0.11090680542156955,&quot;1500-01-03T00:00:00Z&quot;:0.14299400108063248,&quot;1510-01-04T00:00:00Z&quot;:0.1270204129402608,&quot;1520-01-04T00:00:00Z&quot;:0.12318976763449249,&quot;1530-01-04T00:00:00Z&quot;:0.08191010423457444,&quot;1540-01-04T00:00:00Z&quot;:0.3307943774126089,&quot;1550-01-04T00:00:00Z&quot;:0.056523341894422145,&quot;1560-01-04T00:00:00Z&quot;:0.06319501739569483,&quot;1570-01-04T00:00:00Z&quot;:0.07477335296145975,&quot;1580-01-04T00:00:00Z&quot;:0.06319501739569483,&quot;1589-12-25T00:00:00Z&quot;:0.07893055142897323,&quot;1599-12-25T00:00:00Z&quot;:0.13195507028939765,&quot;1609-12-25T00:00:00Z&quot;:0.08572189225338879,&quot;1619-12-25T00:00:00Z&quot;:0.10111202783311174,&quot;1629-12-25T00:00:00Z&quot;:0.12056840885595824,&quot;1639-12-25T00:00:00Z&quot;:0.12951124638152905,&quot;1649-12-25T00:00:00Z&quot;:0.5132431493468156,&quot;1659-12-25T00:00:00Z&quot;:0.11923612035019478,&quot;1669-12-25T00:00:00Z&quot;:0.10798769306284463,&quot;1679-12-25T00:00:00Z&quot;:0.08383766452860089,&quot;1689-12-25T00:00:00Z&quot;:0.06806311673310972,&quot;1699-12-25T00:00:00Z&quot;:0.08756558473163399,&quot;1709-12-25T00:00:00Z&quot;:0.06687932005096368,&quot;1719-12-25T00:00:00Z&quot;:0.07893055142897323,&quot;1729-12-25T00:00:00Z&quot;:0.09373335848038722,&quot;1739-12-25T00:00:00Z&quot;:0.12511975094555342,&quot;1749-12-25T00:00:00Z&quot;:0.631570890033241,&quot;1759-12-25T00:00:00Z&quot;:0.1457600987574321,&quot;1769-12-25T00:00:00Z&quot;:0.20143256904533705,&quot;1779-12-25T00:00:00Z&quot;:0.1473948425712834,&quot;1789-12-25T00:00:00Z&quot;:0.1755866479163993,&quot;1799-12-25T00:00:00Z&quot;:0.14410681164656755,&quot;1809-12-25T00:00:00Z&quot;:0.526456597945896,&quot;1819-12-25T00:00:00Z&quot;:0.32715249348524034,&quot;1829-12-25T00:00:00Z&quot;:0.3224804028520837,&quot;1839-12-25T00:00:00Z&quot;:0.4550041252490028,&quot;1849-12-25T00:00:00Z&quot;:1,&quot;1859-12-25T00:00:00Z&quot;:0.5345865202227175,&quot;1869-12-25T00:00:00Z&quot;:0.472401248195985,&quot;1879-12-25T00:00:00Z&quot;:0.43379593559416757,&quot;1889-12-25T00:00:00Z&quot;:0.23947493148866666,&quot;1899-12-25T00:00:00Z&quot;:0.23133174662550127,&quot;1909-12-25T00:00:00Z&quot;:0.33272041626470866,&quot;1919-12-25T00:00:00Z&quot;:0.2748801655836774,&quot;1929-12-25T00:00:00Z&quot;:0.2884906186701794,&quot;1939-12-25T00:00:00Z&quot;:0.16624013579037955,&quot;1949-12-25T00:00:00Z&quot;:0.3795911706942215,&quot;1959-12-25T00:00:00Z&quot;:0.2571656767601664,&quot;1969-12-25T00:00:00Z&quot;:0.17421664013428945,&quot;1979-12-25T00:00:00Z&quot;:0.23029360340653854,&quot;1989-12-25T00:00:00Z&quot;:0.25119522593701166,&quot;1999-12-25T00:00:00Z&quot;:0.1690983418052287,&quot;2009-12-25T00:00:00Z&quot;:0.14130835473605538,&quot;2019-12-25T00:00:00Z&quot;:0},&quot;periods&quot;:{&quot;Gothic art&quot;:&quot;1140 - 1500&quot;,&quot;Renaissance&quot;:&quot;1420 - 1600&quot;,&quot;Mannerism&quot;:&quot;1520 - 1600&quot;,&quot;Baroque style&quot;:&quot;1575 - 1770&quot;,&quot;Rococo&quot;:&quot;1720 - 1780&quot;,&quot;Classicism&quot;:&quot;1770 - 1840&quot;,&quot;Romanticism&quot;:&quot;1800 - 1840&quot;,&quot;Realism&quot;:&quot;1840 - 1890&quot;,&quot;Impressionism&quot;:&quot;1850 - 1910&quot;,&quot;Symbolism&quot;:&quot;1880 - 1910&quot;,&quot;Art Nouveau&quot;:&quot;1890 - 1910&quot;,&quot;Expressionism&quot;:&quot;1905 - 1925&quot;,&quot;Cubism&quot;:&quot;1907 - 1915&quot;,&quot;Abstract Painting&quot;:&quot;1910 - 1950&quot;,&quot;Surrealism&quot;:&quot;1917 - 1950&quot;,&quot;New Objectivity&quot;:&quot;1918 - 1933&quot;,&quot;Tachisme&quot;:&quot;1945 - 1960&quot;,&quot;Pop art&quot;:&quot;1950 - 1960&quot;,&quot;Contemporary art&quot;:&quot;1960 - 2020&quot;,&quot;14th century&quot;:&quot;1301 - 1400&quot;,&quot;15th century&quot;:&quot;1401 - 1500&quot;,&quot;16th century&quot;:&quot;1501 - 1600&quot;,&quot;17th century&quot;:&quot;1601 - 1700&quot;,&quot;18th century&quot;:&quot;1701 - 1800&quot;,&quot;19th century&quot;:&quot;1801 - 1900&quot;,&quot;20th century&quot;:&quot;1901 - 2000&quot;,&quot;21th century&quot;:&quot;2001 - 2100&quot;}}" data-periods-placeholder="Period&lt;span class=&quot;visible-md-inline visible-lg-inline&quot;&gt; from - till or century&lt;/span&gt;" data-periods-error="Invalid period (please enter period from - till or century)">
+                <form class="dsHeaderSearch" action="/en/search">
+                    <div class="dsHeaderSearch__wrap">
+                        <div class="dsHeaderSearch__field">
+                            <label class="dsHeaderSearch__fieldLabel" for="dsHeaderSearchMode__query">Search term</label>
+
+                            <input class="dsHeaderSearch__fieldInput" id="dsHeaderSearchMode__query" name="q" type="search" autocomplete="off"/>
+                        </div>
+
+                        <div class="dsHeaderSearchMode">
+                            <label class="dsHeaderSearchMode__label" for="dsHeaderSearchMode__fulltext" data-mode="Fulltext">
+                                <input class="dsHeaderSearchMode__input" id="dsHeaderSearchMode__fulltext" type="radio" name="mode" checked/>
+                                <span class="dsHeaderSearchMode__caption">
+                                            in
+                                            <strong>full text</strong>
+                                        </span>
+                            </label>
+
+                            <label class="dsHeaderSearchMode__label" for="dsHeaderSearchMode__keyword" data-mode="Keyword">
+                                <input class="dsHeaderSearchMode__input" id="dsHeaderSearchMode__keyword" type="radio" name="mode"/>
+                                <span class="dsHeaderSearchMode__caption">
+                                            as
+                                            <strong>Keyword</strong>
+                                        </span>
+                            </label>
+
+                            <label class="dsHeaderSearchMode__label" for="dsHeaderSearchMode__period" data-mode="Period">
+                                <input class="dsHeaderSearchMode__input" id="dsHeaderSearchMode__period" type="radio" name="mode"/>
+                                <span class="dsHeaderSearchMode__caption">
+                                            in
+                                            <strong>period</strong>
+                                        </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="dsHeader__action">
+                        <button class="dsHeader__actionButton cancel" data-action="cancel">
+                            <svg class="dsHeader__actionButtonImage cancel" width="40" height="40" viewBox="0 0 40 40">
+                                <path fill="none" stroke="#EDEAE3" stroke-width="3" stroke-linecap="square" d="M20 20L9.5 9.5 20 20 9.5 30.5 20 20zm0 0l10.5 10.5L20 20 30.5 9.5 20 20z"></path>
+                            </svg>
+
+                            <span class="dsHeader__actionButtonCaption">Cancel</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="dsHeaderMenu">
+            <ul class="dsHeaderMenu__list">
+                <li class="dsHeaderMenu__item">
+                    <a class="dsHeaderMenu__link" href="homepage.html">Home</a>
+                </li>
+
+                <li class="dsHeaderMenu__item">
+                    <a class="dsHeaderMenu__link" href="works.html">Works</a>
+                </li>
+
+                <li class="dsHeaderMenu__item">
+                    <a class="dsHeaderMenu__link" href="artist.html">Artists</a>
+                </li>
+
+                <li class="dsHeaderMenu__item">
+                    <a class="dsHeaderMenu__link" href="/en/user">Login</a>
+                </li>
+
+                <li class="dsHeaderMenu__item">
+                    <ul class="dsHeaderMenu__list secondary">
+                        <li class="dsHeaderMenu__item secondary-wide">
+                            <a class="dsHeaderMenu__link" href="/en/concept">About the digital collection</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<script id="dsRandomTerms" type="application/json">
+    ["still life", "watercolour", "Albrecht D\u00fcrer", "circle", "pearl necklace", "depiction of a saint", "distance", "tree trunk", "bonnet", "silver gelatin", "crown", "Giovanni Bellini", "painting", "abstraction", "Berlin", "diagonal", "smile", "Pieter Bruegel the Elder", "deer", "Alps", "sensuous", "Old Testament", "genre", "fruit", "flower", "halberd", "light reflection", "Modern Art, 1800-1945", "shape", "ease", "horseman", "horizon", "park landscape", "pointer", "bathing scene", "Portugal", "landscape", "Antoine Watteau", "sky", "Old Masters, 1300-1800", "figure seen from the back", "collage", "Joseph Beuys", "cloud", "shadow", "armour", "Max Beckmann", "ermine", "annoying", "Lucas Cranach the Elder", "musical instrument", "Rembrandt", "nocturne", "building", "Corinne Wasmuht", "Ernst Ludwig Kirchner", "Guido Reni", "19th century", "art print", "photograph", "Henri Matisse", "apostle", "pair of lovers", "updo", "Rosemarie Trockel", "fire", "glove", "Department of Prints and Drawings", "red", "brush drawing", "earring", "nudity", "putto", "gold chain", "Giovanni Battista Tiepolo", "scallop", "Isa Genzken", "Golgotha", "canvas", "Contemporary Art, 1945-present", "New Testament", "self-portrait", "denim jacket", "  sculpture", "drape", "pliss\u00e9", "green", "secret", "Hans Holbein the Elder", "Mary", "history", "window", "Passion", "Biblical portrayal", "Claude Monet", "portrait", "animal", "capital", "rock", "Pablo Picasso", "Indian ink", "rowboat", "crescent moon", "Anselm Kiefer"]
+</script>
+
+<div class="dsSlideshow">
+    <ul class="dsSlideshow__slides">
+        <li class="dsSlideshow__slide">
+
+            <div class="dsArtworkViewer" data-path="/images/108065/pyramid_files/" data-info="{&quot;type&quot;:&quot;pyramid&quot;,&quot;width&quot;:4320,&quot;height&quot;:2880,&quot;overlap&quot;:1,&quot;tile&quot;:510,&quot;format&quot;:&quot;jpg&quot;}" data-center="{&quot;x&quot;:0.2666015625,&quot;y&quot;:0.41874084919472915}" data-scale-mode="Home"></div>
+            <img class = "" src="32.jpg" style="  display: block;margin-left: auto;margin-right: auto;width: 100%;">
+            <a class="dsSlideshow__slideLink" href="">
+
+                        <span class="dsSlideshow__slideAction">
+                            <span class="dsSlideshow__slideActionCaption">Explore this work</span>
+
+                            <svg class="dsSlideshow__slideActionWidget" width="15" height="15" viewBox="0 0 15 15">
+                                <path fill="none" stroke="#fff" stroke-linecap="square" d="M13 7.5H2M8.5 12L13 7.5 8.5 3"></path>
+                            </svg>
+                        </span>
+            </a>
+        </li>
+        <li class="dsSlideshow__slide">
+            <div class="dsArtworkViewer" data-path="/images/109085/pyramid_files/" data-info="{&quot;type&quot;:&quot;pyramid&quot;,&quot;width&quot;:5773,&quot;height&quot;:4584,&quot;overlap&quot;:1,&quot;tile&quot;:510,&quot;format&quot;:&quot;jpg&quot;}" data-center="{&quot;x&quot;:0.49853515625,&quot;y&quot;:0.528290282902829}" data-scale-mode="Home"></div>
+
+            <a class="dsSlideshow__slideLink" href="/en/work/the-sleep">
+                        <span class="dsSlideshow__slideAction">
+                            <span class="dsSlideshow__slideActionCaption">Explore this work</span>
+
+                            <svg class="dsSlideshow__slideActionWidget" width="15" height="15" viewBox="0 0 15 15">
+                                <path fill="none" stroke="#fff" stroke-linecap="square" d="M13 7.5H2M8.5 12L13 7.5 8.5 3"></path>
+                            </svg>
+                        </span>
+            </a>
+        </li>
+    </ul>
+
+
+
+    <div class="dsSlideshow__title">
+        <div class="dsSlideshow__titleWrap">
+            <h1 class="dsSlideshow__titleHeading">
+                        <span class="dsSlideshow__titleBrand">
+                            Art
+                            <br>
+                            <strong>Collection</strong>
+                        </span>
+            </h1>
+
+            <form class="dsSlideshowSearch" action="/en/search" data-url="/en/search/1/prompt/global" data-label-base="Search for %s" data-label-wrap="“%s”">
+                <div class="dsSlideshowSearch__field">
+                    <label class="dsSlideshowSearch__fieldLabel" for="dsSlideshowSearch__query">Search term</label>
+
+                    <input class="dsSlideshowSearch__fieldInput" id="dsSlideshowSearch__query" name="q" type="search" autocomplete="off"/>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <button class="dsSlideshowScroller">
+        <svg class="dsSlideshowScroller__image" width="30" height="40" viewBox="0 0 30 40">
+            <path class="dsSlideshowScroller__arrow first" fill="#F3F3F3" d="M15 17.414L.293 2.707l1.414-1.414L15 14.586 28.293 1.293l1.414 1.414"></path>
+            <path class="dsSlideshowScroller__arrow second" fill="#F3F3F3" d="M15 28.414L.293 13.707l1.414-1.414L15 25.586l13.293-13.293 1.414 1.414"></path>
+            <path class="dsSlideshowScroller__arrow third" fill="#F3F3F3" d="M15 39.414L.293 24.707l1.414-1.414L15 36.586l13.293-13.293 1.414 1.414"></path>
+        </svg>
+    </button>
+</div>
+
+
+
+
+<div class="dsHome">
+
+
+    <div class="dsRollTheDice" data-url="/en?random=json">
+        <div class="dsRollTheDicePreview" data-pyramid-url="/images/105813/pyramid_files/" data-pyramid-data="{&quot;type&quot;:&quot;pyramid&quot;,&quot;width&quot;:4866,&quot;height&quot;:7291,&quot;overlap&quot;:1,&quot;tile&quot;:510,&quot;format&quot;:&quot;jpg&quot;}" data-center="{&quot;x&quot;:0.5783308931185944,&quot;y&quot;:0.3330078125}">
+            <div class="dsRollTheDicePreview__caption">
+                <div class="dsRollTheDicePreview__captionTitle">Tobias Rehberger</div>
+
+                <div class="dsRollTheDicePreview__captionLabel">Suck and pull your pants down (for peace)</div>
+
+                <a class="dsRollTheDicePreview__link" href="/en/work/suck-and-pull-your-pants-down">
+                    <span class="dsRollTheDicePreview__linkCaption">Explore this work</span>
+
+                    <svg class="dsRollTheDicePreview__linkWidget" width="15" height="15" viewBox="0 0 15 15">
+                        <path fill="none" stroke="#fff" stroke-linecap="square" d="M13 7.5H2M8.5 12L13 7.5 8.5 3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="dsRollTheDice__formWrapper">
+            <div class="dsRollTheDice__form">
+                <div class="dsRollTheDice__intro">
+                    <h2 class="dsRollTheDice__introTitle">
+                        So much
+                        <br>
+                        <strong>to explore</strong>
+                    </h2>
+
+                    <p class="dsRollTheDice__introBody">Bet you haven&#039;t seen everything of our collection? Just dice three words and we&#039;ll show you one of the matching artworks!</p>
+                </div>
+
+                <div class="dsRollTheDice__playArea">
+                    <ul class="dsRollTheDice__dices">
+                        <li class="dsRollTheDice__dice">
+                            <a class="dsRollTheDice__diceLink" href="/en/search?scope=all&amp;q=term(12047)">
+                                <span class="dsRollTheDice__diceLabel">function</span>
+                            </a>
+                        </li>
+                        <li class="dsRollTheDice__dice">
+                            <a class="dsRollTheDice__diceLink" href="/en/search?scope=all&amp;q=term(2819)">
+                                <span class="dsRollTheDice__diceLabel">machine</span>
+                            </a>
+                        </li>
+                        <li class="dsRollTheDice__dice">
+                            <a class="dsRollTheDice__diceLink" href="/en/search?scope=all&amp;q=term(3041)">
+                                <span class="dsRollTheDice__diceLabel">white</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="dsRollTheDice__buttonContainer">
+                        <button class="dsRollTheDice__button">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="dsRollTheDice__buttonImage" width="24" height="24" viewBox="0 0 24 24">
+                                <path fill="#EDEAE3" d="M2.958 6.026C-.405 11.012.916 17.806 5.9 21.17c4.987 3.363 11.782 2.042 15.146-2.943 3.307-4.902 2.076-11.547-2.704-14.965l2.236-.496c.316-.07.572-.305.67-.615.097-.31.02-.647-.2-.887-.218-.24-.55-.343-.866-.272l-4.3.94c-.27.06-.5.24-.62.488-.082.17-.11.36-.078.547l.74 4.338c.054.32.273.588.578.702.304.114.646.058.896-.148.252-.207.373-.53.32-.852l-.383-2.228c3.96 2.87 4.957 8.35 2.203 12.434-2.814 4.172-8.45 5.268-12.62 2.454-4.172-2.814-5.268-8.45-2.454-12.62 1.232-1.827 2.988-3.064 4.94-3.64.447-.166.69-.648.56-1.106-.13-.46-.595-.738-1.06-.64-2.347.694-4.477 2.19-5.946 4.368z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dsAccent">
+        <div class="dsArtworkRelated">
+            <div class="dsArtworkRelated__header container">
+                <div class="dsArtworkRelated__tabsWrap noMarginTop">
+                    <div class="dsArtworkRelated__tabsLine"></div>
+                    <ul class="dsArtworkRelated__tabsList">
+                        <li class="dsArtworkRelated__tab" data-index="1">Horse</li>
+                        <li class="dsArtworkRelated__tab" data-index="2">Boat</li>
+                        <li class="dsArtworkRelated__tab" data-index="3">Still life</li>
+                        <li class="dsArtworkRelated__tab" data-index="4">Shape</li>
+                        <li class="dsArtworkRelated__tab" data-index="5">Beckmann</li>
+                        <li class="dsArtworkRelated__tab" data-index="6">Pair</li>
+                    </ul>
+                </div>
+
+                <div class="dsArtworkScrollerArrows">
+                    <button class="dsArtworkScrollerArrows__button backward">
+                        <svg class="dsArtworkScrollerArrows__image" width="16" height="16" viewBox="0 0 16 16">
+                            <path fill="none" stroke="#EEEBE4" d="M11.5 1l-7 7 7 7"/>
+                        </svg>
+                    </button>
+                    <button class="dsArtworkScrollerArrows__button forward">
+                        <svg class="dsArtworkScrollerArrows__image" width="16" height="16" viewBox="0 0 16 16">
+                            <path fill="none" stroke="#EEEBE4" d="M4.5 15l7-7-7-7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="dsArtworkRelated__container">
+                <div class="dsArtworkRelatedItem" data-index="1">
+                    <div class="dsArtworkScroller" data-has-toc-padding="false">
+                        <div class="dsArtworkScroller__view">
+                            <ul class="dsArtworkScroller__list">
+
+                                <li class="dsArtworkScrollerItem">
+                                    <a class="dsArtworkScrollerItem__link" href="/en/work/the-adoration-of-the-magi">
+                                        <div class="dsArtworkImage">
+                                            <img class="dsArtworkImage__image" width="753" height="1024" alt="The Adoration of the Magi, Master of the von Groote Adoration" data-srcset="/images/103215/meister-der-von-grooteschen-anbetung-adoration-magi-2253a--thumb-sm.jpg 94w,/images/103215/meister-der-von-grooteschen-anbetung-adoration-magi-2253a--thumb-md.jpg 188w,/images/103215/meister-der-von-grooteschen-anbetung-adoration-magi-2253a--thumb-lg.jpg 376w,/images/103215/meister-der-von-grooteschen-anbetung-adoration-magi-2253a--thumb-xl.jpg"/>
+                                            <noscript>
+                                                <img class="dsArtworkImage__imageNoJS" src="/images/103215/meister-der-von-grooteschen-anbetung-adoration-magi-2253a--thumb-xl.jpg" width="753" height="1024" alt="The Adoration of the Magi, Master of the von Groote Adoration"/>
+                                            </noscript>
+                                        </div>
+                                        <span class="dsArtworkScrollerItem__creator">Master of the von Groote Adoration</span>
+                                        <span class="dsArtworkScrollerItem__title">The Adoration of the Magi</span>
+                                    </a>
+                                </li>
+                                <li class="dsArtworkScrollerItem">
+                                    <a class="dsArtworkScrollerItem__link" href="/en/work/the-adoration-of-the-magi">
+                                        <div class="dsArtworkImage">
+                                            <img class="dsArtworkImage__image" width="753" height="1024" alt="The Adoration of the Magi, Master of the von Groote Adoration" data-srcset="/images/103215/meister-der-von-grooteschen-anbetung-adoration-magi-2253a--thumb-sm.jpg 94w,/images/103215/meister-der-von-grooteschen-anbetung-adoration-magi-2253a--thumb-md.jpg 188w,/images/103215/meister-der-von-grooteschen-anbetung-adoration-magi-2253a--thumb-lg.jpg 376w,/images/103215/meister-der-von-grooteschen-anbetung-adoration-magi-2253a--thumb-xl.jpg"/>
+                                            <noscript>
+                                                <img class="dsArtworkImage__imageNoJS" src="/images/103215/meister-der-von-grooteschen-anbetung-adoration-magi-2253a--thumb-xl.jpg" width="753" height="1024" alt="The Adoration of the Magi, Master of the von Groote Adoration"/>
+                                            </noscript>
+                                        </div>
+                                        <span class="dsArtworkScrollerItem__creator">Master of the von Groote Adoration</span>
+                                        <span class="dsArtworkScrollerItem__title">The Adoration of the Magi</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="dsArtworkRelatedItem" data-index="2" data-url="/en?interest=boot"></div>
+                <div class="dsArtworkRelatedItem" data-index="3" data-url="/en?interest=stillleben"></div>
+                <div class="dsArtworkRelatedItem" data-index="4" data-url="/en?interest=form"></div>
+                <div class="dsArtworkRelatedItem" data-index="5" data-url="/en?interest=beckmann"></div>
+                <div class="dsArtworkRelatedItem" data-index="6" data-url="/en?interest=paar"></div>
+            </div>
+        </div>
+        <div class="dsArtworkRelated">
+            <div class="dsArtworkRelated__header container">
+                <div class="dsArtworkRelated__tabsWrap noMarginTop">
+                    <div class="dsArtworkRelated__tabsLine"></div>
+                    <ul class="dsArtworkRelated__tabsList">
+                        <li class="dsArtworkRelated__tab" data-index="1">Most viewed</li>
+                        <li class="dsArtworkRelated__tab" data-index="2">Recently added</li>
+                    </ul>
+                </div>
+
+                <div class="dsArtworkScrollerArrows">
+                    <button class="dsArtworkScrollerArrows__button backward">
+                        <svg class="dsArtworkScrollerArrows__image" width="16" height="16" viewBox="0 0 16 16">
+                            <path fill="none" stroke="#EEEBE4" d="M11.5 1l-7 7 7 7"/>
+                        </svg>
+                    </button>
+                    <button class="dsArtworkScrollerArrows__button forward">
+                        <svg class="dsArtworkScrollerArrows__image" width="16" height="16" viewBox="0 0 16 16">
+                            <path fill="none" stroke="#EEEBE4" d="M4.5 15l7-7-7-7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="dsArtworkRelated__container">
+                <div class="dsArtworkRelatedItem" data-index="1">
+                    <div class="dsArtworkScroller" data-has-toc-padding="false">
+                        <div class="dsArtworkScroller__view">
+                            <ul class="dsArtworkScroller__list">
+
+                                <li class="dsArtworkScrollerItem">
+                                    <a class="dsArtworkScrollerItem__link" href="/en/work/the-courtyard-of-the-orphanage-in-amsterdam">
+                                        <div class="dsArtworkImage">
+                                            <img class="dsArtworkImage__image" width="1024" height="755" alt="The Courtyard of the Orphanage in Amsterdam: Free Period in the Amsterdam Orphanage, Max Liebermann" data-srcset="/images/1341/max-liebermann-courtyard-orphanage-amsterdam-1351--thumb-sm.jpg 128w,/images/1341/max-liebermann-courtyard-orphanage-amsterdam-1351--thumb-md.jpg 256w,/images/1341/max-liebermann-courtyard-orphanage-amsterdam-1351--thumb-lg.jpg 512w,/images/1341/max-liebermann-courtyard-orphanage-amsterdam-1351--thumb-xl.jpg"/>
+                                            <noscript>
+                                                <img class="dsArtworkImage__imageNoJS" src="/images/1341/max-liebermann-courtyard-orphanage-amsterdam-1351--thumb-xl.jpg" width="1024" height="755" alt="The Courtyard of the Orphanage in Amsterdam: Free Period in the Amsterdam Orphanage, Max Liebermann"/>
+                                            </noscript>
+                                        </div>
+                                        <span class="dsArtworkScrollerItem__creator">Max Liebermann</span>
+                                        <span class="dsArtworkScrollerItem__title">The Courtyard of the Orphanage in Amsterdam: Free Period in the Amsterdam Orphanage</span>
+                                    </a>
+                                </li>
+
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="dsArtworkRelatedItem" data-index="2" data-url="/en?interest=recently-added"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="dsHome__bgBlock">
+        <div class="dsHome__bgBlockImage dsImage" data-scale-mode="Cover" data-focus-y="0">
+            <img class="dsImage__image" width="2000" height="1091" data-srcset="/assets/images/index-museum-1024w.jpg 1024w, /assets/images/index-museum-2000w.jpg">
+        </div>
+        <div class="dsHomeBlock container museum">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="dsHomeTitle noMarginTop">
+                        About the
+                        <br>
+                        <strong>Art Collection and its creator</strong>
+                    </h2>
+                    <p class="dsHomeCopy withMediumMarginTop">hi I'm Yanbing Gong. this is the new UI im working on for this project. Currently this is just an html with zero PHP plugged in. I will implement it once i finish my midterms or/and finals :-(</p>
+                    <p class="withMediumMarginTop">
+                        <a class="dsButton milky" href="indx.php">Visit the currently used site</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<footer class="dsFooter">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <p class="dsFooter__caption">Legal info</p>
+
+                <ul class="dsFooter__links">
+                    <li class="dsFooter__linksItem">
+                        <a class="dsFooter__linksLink" href="" target="_blank">Imprint</a>
+                    </li>
+
+                    <li class="dsFooter__linksItem">
+                        <a class="dsFooter__linksLink" href="" target="_blank">Privacy</a>
+                    </li>
+
+                    <li>
+                        website layout template credit to
+                        <br/>
+                        Copyright © 2022 Städel Museum
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-sm-4">
+                <p class="dsFooter__caption">Digital Collection</p>
+
+                <ul class="dsFooter__links">
+                    <li class="dsFooter__linksItem">
+                        <a class="dsFooter__linksLink" href="/en">Home</a>
+                    </li>
+
+                    <li class="dsFooter__linksItem">
+                        <a class="dsFooter__linksLink" href="/en/search">Works</a>
+                    </li>
+
+                    <li class="dsFooter__linksItem">
+                        <a class="dsFooter__linksLink" href="/en/person">Artists</a>
+                    </li>
+
+                    <li class="dsFooter__linksItem">
+                        <a class="dsFooter__linksLink" href="/en/album">Albums</a>
+                    </li>
+
+                    <li class="dsFooter__linksItem">
+                        <a class="dsFooter__linksLink" href="/en/concept">About the digital collection</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-sm-4">
+                <p class="dsFooter__caption">Social Media</p>
+
+                <ul class="dsFooter__social">
+                    <li class="dsFooter__socialItem">
+                        <a class="dsFooter__socialLink circle" href="https://github.com/YanbG" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                    </li>
+
+                    <li class="dsFooter__socialItem">
+                        <a class="dsFooter__socialLink circle" href="https://www.linkedin.com/in/yanbing-gong-a64b571ba" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 8c0 .557-.447 1.008-1 1.008s-1-.45-1-1.008c0-.557.447-1.008 1-1.008s1 .452 1 1.008zm0 2h-2v6h2v-6zm3 0h-2v6h2v-2.861c0-1.722 2.002-1.881 2.002 0v2.861h1.998v-3.359c0-3.284-3.128-3.164-4-1.548v-1.093z"/></svg>
+                        </a>
+                    </li>
+
+                    <li class="dsFooter__socialItem">
+                        <a class="dsFooter__socialLink circle" href="https://www.instagram.com/colonizedbycaffeine/ " target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+</body>
+</html>
