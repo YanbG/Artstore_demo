@@ -137,70 +137,70 @@
         </div>
     </section>
 
-    <section class = viewport_header style="filter:opacity(.80); color: whitesmoke">
-
-        <?php
-
-        $findRecentSQL = "SELECT * FROM artworks ORDER BY timeReleased DESC LIMIT 3";
-        $find = mysqli_query($conn, $findRecentSQL);
-        for($i = 0; $i < 1; $i++){
-            $each = mysqli_fetch_assoc($find);
-            $recentID[] = $each['artworkID'];
-            $recentFile[] = $each['imageFileName'];
-        }
-        ?>
-        <div class="slideshow">
-            <style>
-                .slides{
-                    text-align: center;
-                    padding-top: 70px;
-                }
-                .previous{
-                    position: absolute;
-                    top: 450px;
-                }
-                .description{
-                    visibility: hidden;
-                    text-align: center;
-                }
-                .description:hover{
-                    visibility: visible;
-                    transition-duration: 1s;
-                }
-                .hottest:hover{
-                    opacity: 30%;
-                    transition-duration: 3s;
-                }
-
-            </style>
-            <a class = "previous" onclick="plusSlides(-1)">&#10094;</a>
-
-            <div class="slides">
-                <a href="glossary.php?artworkID=<?php echo"$recentID[0]"?>"><img class = hottest src="img/<?php echo"$recentID[0]"?>.jpg" style="width: 70%"></a>
-            </div>
-            <div class="slides">
-                <a href="glossary.php?artworkID=<?php echo"$recentID[1]"?>"><img class = hottest src="img/<?php echo"$recentID[1]"?>.jpg" style="width: 70%"></a>
-            </div>
-            <div class="slides">
-                <a href="glossary.php?artworkID=<?php echo"$recentID[2]"?>"><img class = hottest src="img/<?php echo"$recentID[2]"?>.jpg" style="width: 70%">
-                    <!--                        <table class = description>-->
-                    <!--                            <tr>-->
-                    <!--                                <th>Name</th-->
-                    <!--                                <th>--><?php //echo".$title[2]." ?><!--</th>-->
-                    <!--                            </tr>-->
-                    <!---->
-                    <!--                        </table></img>-->
-                </a>
-            </div>
-
-            <a class = "next" onclick="plusSlides(1)">&#10095;</a>
-
-
-        </div>
-
-
-
-    </section>
+<!--    <section class = viewport_header style="filter:opacity(.80); color: whitesmoke">-->
+<!---->
+<!--        --><?php
+//
+//        $findRecentSQL = "SELECT * FROM artworks ORDER BY timeReleased DESC LIMIT 3";
+//        $find = mysqli_query($conn, $findRecentSQL);
+//        for($i = 0; $i < 1; $i++){
+//            $each = mysqli_fetch_assoc($find);
+//            $recentID[] = $each['artworkID'];
+//            $recentFile[] = $each['imageFileName'];
+//        }
+//        ?>
+<!--        <div class="slideshow">-->
+<!--            <style>-->
+<!--                .slides{-->
+<!--                    text-align: center;-->
+<!--                    padding-top: 70px;-->
+<!--                }-->
+<!--                .previous{-->
+<!--                    position: absolute;-->
+<!--                    top: 450px;-->
+<!--                }-->
+<!--                .description{-->
+<!--                    visibility: hidden;-->
+<!--                    text-align: center;-->
+<!--                }-->
+<!--                .description:hover{-->
+<!--                    visibility: visible;-->
+<!--                    transition-duration: 1s;-->
+<!--                }-->
+<!--                .hottest:hover{-->
+<!--                    opacity: 30%;-->
+<!--                    transition-duration: 3s;-->
+<!--                }-->
+<!---->
+<!--            </style>-->
+<!--            <a class = "previous" onclick="plusSlides(-1)">&#10094;</a>-->
+<!---->
+<!--            <div class="slides">-->
+<!--                <a href="glossary.php?artworkID=--><?php //echo"$recentID[0]"?><!--"><img class = hottest src="img/--><?php //echo"$recentID[0]"?><!--.jpg" style="width: 70%"></a>-->
+<!--            </div>-->
+<!--            <div class="slides">-->
+<!--                <a href="glossary.php?artworkID=--><?php //echo"$recentID[1]"?><!--"><img class = hottest src="img/--><?php //echo"$recentID[1]"?><!--.jpg" style="width: 70%"></a>-->
+<!--            </div>-->
+<!--            <div class="slides">-->
+<!--                <a href="glossary.php?artworkID=--><?php //echo"$recentID[2]"?><!--"><img class = hottest src="img/--><?php //echo"$recentID[2]"?><!--.jpg" style="width: 70%">-->
+<!--                    <!--                        <table class = description>-->-->
+<!--                    <!--                            <tr>-->-->
+<!--                    <!--                                <th>Name</th-->-->
+<!--                    <!--                                <th>-->--><?php ////echo".$title[2]." ?><!--<!--</th>-->-->
+<!--                    <!--                            </tr>-->-->
+<!--                    <!---->-->
+<!--                    <!--                        </table></img>-->-->
+<!--                </a>-->
+<!--            </div>-->
+<!---->
+<!--            <a class = "next" onclick="plusSlides(1)">&#10095;</a>-->
+<!---->
+<!---->
+<!--        </div>-->
+<!---->
+<!---->
+<!---->
+<!--    </section>-->
 
     <script>
         src="SharedMethod.js";
