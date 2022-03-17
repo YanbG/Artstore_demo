@@ -1,0 +1,396 @@
+/* For debugging only! */
+/* .dsHeaderBranding__link {color: orange;}*/
+
+@page {
+    margin-left: 2cm;
+}
+
+@media print {
+    a[href]:after {
+        content: "" !important;
+    }
+
+    /* --- GENERAL ---*/
+    .dsHeader {
+        position: absolute;
+        background-color: black !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .dsHeader__actionButton.search, .dsHeader__actionButton.menu {
+        display: none;
+    }
+
+    .dsHeaderBranding {
+        display: block !important;
+    }
+
+    .dsHeaderBranding__content.default {
+        height: 70px;
+        font-size: 26px;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 70px;
+    }
+
+    .dsHeaderBranding__left {
+        font-family: Freight Sans, Arial, Helvetica, MS Trebuchet, sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        color: #fff !important;
+    }
+
+    .dsHeaderBranding__right {
+        font-family: Freight Display, Georgia, Times, Times New Roman, serif;
+        font-style: normal;
+        font-weight: 400;
+        color: #fff !important;
+    }
+
+    .dsHeaderBranding__content.artwork {
+        display: none;
+    }
+
+    h2.withLine:before {
+        border-top: 1px solid black;
+    }
+
+    .dsToc, .dsTop {
+        display: none;
+    }
+
+    .dsFooter .container .row .col-sm-4:first-child {
+        width: 100%;
+    }
+
+    .dsFooter .col-sm-4 .dsFooter__caption {
+        border-top: 3px solid black;
+        color: white !important;
+        padding: 0;
+    }
+
+    .dsFooter .container .row .col-sm-4:nth-child(2), .dsFooter .col-sm-4:last-child {
+        display: none;
+    }
+
+    .dsFooter__linksItem {
+        display: none;
+    }
+
+    .dsButton {
+        display: none;
+        /*border: 0.5pt solid black;*/
+    }
+
+    /*--- START ---*/
+    .isHomepage .dsHeader .dsHeader__logo.default {
+        transform: scale(1) translate(0, 0) !important;
+    }
+
+    span.dsSlideshow__titleBrand, span.dsSlideshow__titleBrand strong {
+        color: white !important;
+    }
+
+    form.dsSlideshowSearch {
+        display: none;
+    }
+
+    .dsRollTheDice, .isHomepage.dsAccent {
+        display: none;
+    }
+
+    /* --- SEARCH RESULTS --- */
+    .dsSearchForm__actions, .dsSearchForm__inlineActions {
+        display: none;
+    }
+
+    /* --- ARTWORK DETAILS ---*/
+    .dsArtworkViewer {
+        margin-top: 60px;
+    }
+
+    .dsArtworkViewer__controlsImage {
+        display: none;
+    }
+
+    .dsArtwork__titleCreatorImage, .dsArtworkActions {
+        display: none;
+    }
+
+    /* Label */
+    .row .col-sm-4.col-sm-push-8 {
+        width: 33.33333%;
+        left: 66.66667%;
+        float: left;
+    }
+
+    /* Text */
+    .row .col-sm-8 {
+        width: 66.66667%;
+        float: left;
+    }
+
+    .row .col-sm-pull-4 {
+        right: 33.33333%;
+    }
+
+    .row .withLargeMarginTop-xs-only {
+        margin-top: 0;
+    }
+
+    /* Audio */
+    h2.withLine.dsArtwork__titleMedia {
+        display: none;
+    }
+
+    div.dsAudioList {
+        display: none;
+    }
+
+    /*
+    .dsAudioListItem:first-child {
+        border-top: 1px dashed #000;
+    }
+
+    .dsAudioListItem {
+        padding-left: 10px;
+        border-bottom: 1px dashed #000;
+    }
+
+    .dsAudioListItem__widget {
+        display: none;
+    }
+    */
+    /* Video */
+    ul.dsVideos {
+        display: none;
+    }
+
+    /*
+    .dsVideo__thumbnail {
+        border: 1px solid #000;
+    }
+
+    svg.dsVideo__widget {
+        display: none;
+    }
+    */
+    /* Properties */
+    .dsGroup {
+        border-top: 1px solid black !important;
+        /*border-bottom: 1px solid black;*/
+    }
+
+    .dsGroup__contentBody {
+        position: static;
+        opacity: 1;
+    }
+
+    .dsProperty.horizontal .dsProperty__caption {
+        float: left;
+        width: 33.333%;
+    }
+
+    .dsProperty.horizontal .dsProperty__text, .dsProperty.horizontal .dsProperty__value {
+        margin-left: 33.333%;
+        padding-left: 20px;
+    }
+
+    /* Related */
+    div.dsArtworkRelated {
+        display: none;
+    }
+
+    /* Teaser */
+    h2.withLine.dsArtwork__titleTeaser {
+        display: none;
+    }
+
+    div.dsTeaser {
+        display: none;
+    }
+
+    /* Contact */
+    h2.withLine.dsArtwork__titleContact {
+        /*display: none;*/
+    }
+
+    a.dsButton[href^="mailto:"] {
+        display: inline-block !important;
+        text-transform: none;
+        border: 0;
+        padding: 0;
+    }
+
+    a.dsButton[href^="mailto:digitalesammlung@staedelmuseum.de"]:after {
+        content: ": digitalesammlung@staedelmuseum.de" !important;
+    }
+
+    a.dsButton[href^="mailto:"] svg {
+        display: none;
+    }
+
+    /* Footer */
+    .dsArtworkFooter__cell {
+        border-top: 1px solid black;
+    }
+
+    /* --- ARTIST INDEX --- */
+    .dsGenericPage__title {
+        margin-top: 80px;
+    }
+
+    .dsPersonIndex {
+        margin-left: -15px;
+        margin-right: -15px;
+        font-size: 0;
+    }
+
+    .dsPersonIndex__item {
+        display: inline-block;
+        width: 33.333%;
+        padding: 0 15px;
+        vertical-align: top;
+    }
+
+    /*--- ALBUMS ---*/
+    .dsAlbumHighlight__caption {
+        top: 9px;
+        left: auto;
+        width: 33.333%;
+        width: calc(33.333% + 10px);
+        padding: 15px 20px;
+        background: #47413f;
+        -webkit-print-color-adjust: exact;
+        text-shadow: none;
+    }
+
+    .dsAlbumHighlight__title {
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    .dsAlbumHighlight__link {
+        padding-right: 33.333%;
+        padding-right: calc(33.333% + 10px);
+    }
+
+    .dsAlbumList {
+        margin: 0;
+    }
+
+    .dsAlbumList__item {
+        display: list-item;
+        width: 100%;
+        margin: 20px 0;
+        padding: 0;
+    }
+
+    .dsAlbumList__link, .dsAlbumList__more {
+        padding-top: 9px;
+        position: relative;
+        display: block;
+        padding-bottom: 0;
+        height: auto;
+    }
+
+    .dsAlbumList__link > .dsArtworkImage {
+        overflow: hidden;
+        width: 100px;
+        height: 100px;
+        margin: 0;
+        position: relative;
+        top: 0;
+
+    }
+
+    .dsAlbumList__caption {
+        position: absolute;
+        top: 9px;
+        right: 0;
+        bottom: 0;
+        left: 100px;
+        padding: 10px 10px 10px 20px;
+        background: #474140;
+        color: #d7d3cc;
+    }
+
+    .dsAlbumList__count {
+        position: static;
+        /*position: absolute;*/
+        /*right: 10px;*/
+        /*bottom: 10px;*/
+        /*left: 20px;*/
+        /*font-size: 14px;*/
+    }
+
+    .dsAlbumCover__titleRow {
+        margin-top: 80px;
+    }
+
+    .dsAlbumCover__viewer {
+        display: none;
+    }
+
+    .dsAlbumCover .dsShare {
+        display: none;
+    }
+
+    .dsAlbumCover__descriptionRow .col-sm-9.col-md-8 {
+        width: 66.6%;
+        float: left;
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .dsAlbumCover__descriptionRow .col-sm-3.col-md-4 {
+        width: 33.3%;
+        float: left;
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    /* 171101 Änderungen */
+    .dsHeader {
+        background-color: white !important;
+        border-bottom: 1pt solid black;
+    }
+
+    .dsHeader__logo svg path {
+        fill: #000;
+    }
+
+    .dsHeaderBranding__left, .dsHeaderBranding__right {
+        color: black !important;
+    }
+
+
+    /* 171101 Neu */
+    .dsProperty, h2.withLine {
+        page-break-inside: avoid;
+    }
+
+    h2.withLine, .dsGroup__caption {
+        page-break-after: avoid;
+    }
+
+    .dsGroup + h2.withLargeMarginTop, .container + .dsAccent.withLargeMarginTop {
+        margin-top: 0;
+    }
+
+    .dsArtwork__contentOnlyMedia > *:first-child {
+        float: none !important;
+        width: 100% !important;
+        left: 0 !important;
+    }
+
+    .dsArtwork__contentOnlyMedia > *:last-child {
+        display: none;
+    }
+}
+
