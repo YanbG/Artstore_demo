@@ -110,12 +110,13 @@
     //    echo $_POST['password'];
     //    echo $_POST['tel'];
     //    echo $_POST['address'];
-    if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['email'])
+    if(isset($_POST['username']) && isset($_POST['password']) && isset ($_POST['pwd_repeat']) && isset($_POST['email'])
         && isset($_POST['tel']) && isset($_POST['address'])) {
         //echo $_POST['address'];
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
+        $pwd_repeat = $_POST['pwd_repeat'];
         $tel = $_POST['tel'];
         $address = $_POST['address'];
         if(empty($username)){
@@ -128,30 +129,31 @@
             echo '<html><script>alert("tel must be filled out" );</script></html>' . "<meta http-equiv=\"refresh\" content=\"0;url=sign_up_page.php\">";
         }if(empty($address)){
             echo '<html><script>alert("address must be filled out" );</script></html>' . "<meta http-equiv=\"refresh\" content=\"0;url=sign_up_page.php\">";
-        }else{
-            //echo $username, $password, $tel, $email, $address;
-            $checkExistingUser = "SELECT * FROM users WHERE name='".$username."' OR email ='".$email."'OR tel=$tel;";
-            $check = mysqli_query($conn, $checkExistingUser);
-            $result = mysqli_num_rows($check);
-            $row = mysqli_fetch_assoc($check);
-            if($check && $row){
-                //echo '<script>alert("sql executed")</script>';
-                echo '<script>alert("username/email/tel already used to create accounts, use a new one ;)")</script>';
-            }else{
-                $createUser = "INSERT INTO users (name, email, password, tel, address, balance) 
-                           VALUES ('".$username."','".$email."','".$password."','".$tel."', '".$address."', 0);";
-                $create = mysqli_query($conn, $createUser);
-                if($create){
-                    echo '<html><script>alert("account created!!" );</script></html>' . "<meta http-equiv=\"refresh\" content=\"0;url=LogInPage.php\">";
-                }else{
-                    echo '<script>alert("account is not created due to wrong input")</script>';
+        }if(strcmp($password, $pwd_repeat)!=0){
+                echo'<html><script>alert("password doesnt match, please check again");</script></html>'. "<meta http-equiv=\"refresh\" content=\"0;url=sign_up_page.php\">";
+        }else {
+        //echo $username, $password, $tel, $email, $address;
+        $checkExistingUser = "SELECT * FROM users WHERE name='" . $username . "' OR email ='" . $email . "'OR tel=$tel;";
+        $check = mysqli_query($conn, $checkExistingUser);
+        $result = mysqli_num_rows($check);
+        $row = mysqli_fetch_assoc($check);
 
-                }
+        if ($check && $row) {
+            //echo '<script>alert("sql executed")</script>';
+            echo '<script>alert("username/email/tel already used to create accounts, use a new one ;)")</script>';
+        } else {
+            $createUser = "INSERT INTO users (name, email, password, tel, address, balance) 
+                           VALUES ('" . $username . "','" . $email . "','" . $password . "','" . $tel . "', '" . $address . "', 0);";
+            $create = mysqli_query($conn, $createUser);
+            if ($create) {
+                echo '<html><script>alert("account created!!" );</script></html>' . "<meta http-equiv=\"refresh\" content=\"0;url=LogInPage.php\">";
+            } else {
+                echo '<script>alert("account is not created due to wrong input")</script>';
 
-            }}
+            }
 
-    }else{
-        //echo '<script>alert("3")</script>';
+        }
+
     }
 
 
