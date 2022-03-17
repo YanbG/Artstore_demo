@@ -141,7 +141,7 @@
             </tr>
             <tr>
                 <td >
-                    <form method="post" name="addFavs()">
+                    <form action = "glossary.php" method="POST" onsubmit="addFavs()" name="addFavs()">
                         <input type="submit" name="addFavs()"
                                class="button" value="addFavs()"/>  </input>
                     </form>
