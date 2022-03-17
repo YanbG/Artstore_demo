@@ -4,7 +4,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>info</title>
     <link rel="stylesheet"  type="text/css" href="style.css" media="all">
     <script type = "text/javascript" href="someFunctions.js" media = all></script>
     <style>
@@ -13,21 +12,22 @@
 
 <body>
 
-    <?php
+<?php
 
-    //get heroku db connection information
-    $cleardb_url        = parse_url(getenv("CLEARDB_DATABASE_URL"));
-    $cleardb_server     = $cleardb_url["host"];
-    $cleardb_username   = $cleardb_url["user"];
-    $cleardb_password   = $cleardb_url["pass"];
-    $cleardb_db         = substr($cleardb_url["path"],1);
+//get heroku db connection information
+$cleardb_url        = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$cleardb_server     = $cleardb_url["host"];
+$cleardb_username   = $cleardb_url["user"];
+$cleardb_password   = $cleardb_url["pass"];
+$cleardb_db         = substr($cleardb_url["path"],1);
 
-    $active_group   = 'default';
-    $query_builder  = TRUE;
+$active_group   = 'default';
+$query_builder  = TRUE;
 
-    //connect to DB
-    $conn=mysqli_connect($cleardb_server, $cleardb_username,$cleardb_password, $cleardb_db);
-    ?>
+//connect to DB
+$conn=mysqli_connect($cleardb_server, $cleardb_username,$cleardb_password, $cleardb_db);
+?>
+
 
 
 <video autoplay muted loop id = "bgv">
@@ -107,7 +107,7 @@
 
         <img src="img/<?php echo "$artworkID" ?>.jpg" style = "width: 40%; height: 40%; float:left">
 
-        <table style="text-align: left; font-weight: bold; background-color: rgba(0,0,0,0)">
+        <table style="text-align: left; font-weight: bold">
             <style>
                 td{
                     font-size: 12pt;
@@ -140,72 +140,76 @@
                 <td><?php echo "$view"?></td>
             </tr>
             <tr>
-                <td >
-                    <form action = "glossary.php" method="POST" onsubmit="addFavs()" name="addFavs()">
+                <td  >
+                    <form method="post">
                         <input type="submit" name="addFavs()"
-                               class="button" value="addFavs()"/>  </input>
+                               class="button" value="addFavs()"/>
                     </form>
 
-                    <?php //This PHP is for addCarts() only.
-                    if(isset($_POST['addFavs()'])) {
-                        // NEED AN IF STATEMENT
-                        if(!$_SESSION['username']){
-                            echo '<script>alert("go log in first~")</script>';
-                        }else if ($_SESSION['username'] && $_SESSION['password']) {
-                            //已经登陆了
-                            //If ->不能重复添加元素
-                            //echo '<script>alert("reached here")</script>';
-                            $uid = $_SESSION['uid'];
-                            //echo $uid;
-                            $record = "SELECT * FROM wishlist WHERE userID = $uid AND artworkID = $artworkID;";
-                            //echo $record;
-                            $getRecord = mysqli_query($conn, $record);
-                            $numOfR = mysqli_num_rows($getRecord);
-                            if ($getRecord) {
-                                if ($numOfR == 0) {
-                                    $addToWishlist = "INSERT INTO wishlist (userID, artworkID) VALUES ($uid, $artworkID);";
-                                    $add = mysqli_query($conn, $addToWishlist);
-                                    if($add){
-                                        echo '<script>alert("successfully added")</script>';
-                                    }else{
-                                        echo '<script>alert("record = 0 but didnt add")</script>';
-                                    }
-                                } else {
-
-                                    echo '<html><head><script>alert("item already in favs~" );</script></head></html>' .
-                                        "<meta http-equiv=\"refresh\" content=\"0;url=favorites.php\">";
-                                }
-                            }
-                            else {
-                                echo '<script>alert("the query has not been executed")';
-                            }
-                        }else{
-                            echo '<script>alert("you need to log in")';
+                    <script>
+                        function addFavs(){
+                            alert("successfuly added to your favs");
                         }
+                    </script>
+                    </input></td>
+            <tr>
+                <?php
+                $checkExistenceSQL = "SELECT * FROM wishlist WHERE artworkID = $artworkID AND userID = ".$_SESSION['uid'].";";
+                $check = mysqli_query($conn, $checkExistenceSQL);
+                if($check){
+                    if($row = mysqli_fetch_assoc($check)){
+                        echo"<td> this item is already in your fav list~</td>";
                     }
-
-                    ?>
-                  </td>
+                }else{
+                    echo'<script>alert("sql not executed")</script>';
+                }
+                ?>
             </tr>
-<!--            -->
-<!--                --><?php
-//                $checkExistenceSQL = "SELECT * FROM wishlist WHERE artworkID = $artworkID AND userID = ".$_SESSION['uid'].";";
-//                $check = mysqli_query($conn, $checkExistenceSQL);
-//                if($check){
-//                    if($row = mysqli_fetch_assoc($check)){
-//                        echo"<td> this item is already in your fav list~</td>";
-//                    }
-//                }else{
-//                    echo'<script>alert("sql not executed")</script>';
-//                }
-//                ?>
-
         </table>
     </div>
 </section>
 
 
+<?php //This PHP is for addCarts() only.
+if(isset($_POST['addFavs()'])) {
+    // NEED AN IF STATEMENT
+    if(!$_SESSION['username']){
+        echo '<script>alert("go log in first~")</script>';
+    }
+    if ($_SESSION['username'] && $_SESSION['password']) {
+        //已经登陆了
+        //If ->不能重复添加元素
+        //echo '<script>alert("reached here")</script>';
+        $uid = $_SESSION['uid'];
+        //echo $uid;
+        $record = "SELECT * FROM wishlist WHERE userID = $uid AND artworkID = $artworkID;";
+        //echo $record;
+        $getRecord = mysqli_query($conn, $record);
+        $numOfR = mysqli_num_rows($getRecord);
+        if ($getRecord) {
+            if ($numOfR == 0) {
+                $addToWishlist = "INSERT INTO wishlist (userID, artworkID) VALUES ($uid, $artworkID);";
+                $add = mysqli_query($conn, $addToWishlist);
+                if($add){
+                    echo '<script>alert("successfully added")</script>';
+                }else{
+                    echo '<script>alert("record = 0 but didnt add")</script>';
+                }
+            } else {
 
+                echo '<html><head><script>alert("item already in favs~" );</script></head></html>' .
+                    "<meta http-equiv=\"refresh\" content=\"0;url=favorites.php\">";
+            }
+        }
+        else {
+            echo '<script>alert("the query has not been executed")';
+        }
+    }else{
+        echo '<script>alert("you need to log in")';
+    }
+}
+
+?>
 
 <!--        <img src="img/59.jpg" style = "resize: both; height: 320px; width: 272px;position: relative; left: 150px">-->
 
@@ -219,4 +223,3 @@
 
 </body>
 </html>
-
