@@ -140,7 +140,7 @@
                 <td><?php echo "$view"?></td>
             </tr>
             <tr>
-                <td  >
+                <td >
                     <form method="post">
                         <input type="submit" name="addFavs()"
                                class="button" value="addFavs()"/>
@@ -175,8 +175,7 @@ if(isset($_POST['addFavs()'])) {
     // NEED AN IF STATEMENT
     if(!$_SESSION['username']){
         echo '<script>alert("go log in first~")</script>';
-    }
-    if ($_SESSION['username'] && $_SESSION['password']) {
+    }else if ($_SESSION['username'] && $_SESSION['password']) {
         //已经登陆了
         //If ->不能重复添加元素
         //echo '<script>alert("reached here")</script>';

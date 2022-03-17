@@ -125,7 +125,7 @@ $conn=mysqli_connect($cleardb_server, $cleardb_username,$cleardb_password, $clea
     </style>
 
     <div class = viewport_header style = "text-align: center;padding-top: 260pt; color: black">
-        <form name = "favs" action = "favoritespages.php" method = "get">
+        <form name = "favs" action = "favorites.php" method = "get">
             <table style = "padding-top: 0pt; text-align: center">
                 <tr id = "tr1">
                     <th>arts</th>
