@@ -120,7 +120,7 @@
                         echo '<html><head><script>alert("successfully logged in!!" );</script></head></html>' .
                             "<meta http-equiv=\"refresh\" content=\"0;url=glossary.php?artworkID=" . $artworkID . "\">";
                     } else {
-                        $url = "Homepage.php";
+                        $url = "index.php";
                         echo '<html><head><script>alert("successfully logged in!!" );</script></head></html>' .
                             "<meta http-equiv=\"refresh\" content=\"0;url=" . $url . "\">";
                     }
