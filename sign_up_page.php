@@ -146,7 +146,7 @@
                            VALUES ('" . $username . "','" . $email . "','" . $password . "','" . $tel . "', '" . $address . "', 0);";
             $create = mysqli_query($conn, $createUser);
             if ($create) {
-                echo '<html><script>alert("account created!!" );</script></html>' . "<meta http-equiv=\"refresh\" content=\"0;url=LogInPage.php\">";
+                echo '<html><script>alert("account created!!" );</script></html>' . "<meta http-equiv=\"refresh\" content=\"0;url=log_in_page.php\">";
             } else {
                 echo '<script>alert("account is not created due to wrong input")</script>';
 
