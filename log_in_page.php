@@ -31,8 +31,8 @@
     <?php
 
     if(isset($_SESSION['username'])){
-        $url = "Homepage.php";
-        echo '<html><head><script>alert("you already logged in!" );</script></head></html>' .
+        $url = "index.php";
+        echo '<html><head><script>alert("you already logged in~" );</script></head></html>' .
             "<meta http-equiv=\"refresh\" content=\"0;url=" . $url . "\">";
     }
 
@@ -41,11 +41,11 @@
         <?php
         if(empty($_SESSION['username'])&&empty($_SESSION['password'])) {
             if(isset($_SESSION['username']))
-                echo "successfully logged in，" . $_SESSION['username'] . "<a href='LogOut.php' >log out</a>";
+                echo "successfully logged in，" . $_SESSION['username'] . "<a href='log_out.php' >log out</a>";
             else
-                echo "You are not logged in,<a href='LogInPage.php'>go log in</a>";
+                echo "You are not logged in,<a href='log_in_page.php'>go log in</a>";
         }else{
-            echo "successfully logged in, welcome:".$_SESSION['username']."<a href='LogOut.php'>log out</a>";
+            echo "successfully logged in, welcome:".$_SESSION['username']."<a href='log_out.php'>log out</a>";
         }
 
         ?>
@@ -76,7 +76,7 @@
     </nav>
 
     <div class = viewport_header style = "padding-top: 100pt; text-align: center">
-        <form name = "logInForm" onsubmit="validateForm()" action = 'LogInPage.php'method="post">
+        <form name = "logInForm" onsubmit="validateForm()" action = 'log_in_page.php'method="post">
             <p><h3>please enter your username</h3></p>
             <style>
                 input:focus{background:darkgrey; transition-duration: 1s}
