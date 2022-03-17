@@ -146,69 +146,66 @@
                                class="button" value="addFavs()"/>  </input>
                     </form>
 
-                    <script>
-                        function addFavs(){
-                            alert("successfuly added to your favs");
+                    <?php //This PHP is for addCarts() only.
+                    if(isset($_POST['addFavs()'])) {
+                        // NEED AN IF STATEMENT
+                        if(!$_SESSION['username']){
+                            echo '<script>alert("go log in first~")</script>';
+                        }else if ($_SESSION['username'] && $_SESSION['password']) {
+                            //已经登陆了
+                            //If ->不能重复添加元素
+                            //echo '<script>alert("reached here")</script>';
+                            $uid = $_SESSION['uid'];
+                            //echo $uid;
+                            $record = "SELECT * FROM wishlist WHERE userID = $uid AND artworkID = $artworkID;";
+                            //echo $record;
+                            $getRecord = mysqli_query($conn, $record);
+                            $numOfR = mysqli_num_rows($getRecord);
+                            if ($getRecord) {
+                                if ($numOfR == 0) {
+                                    $addToWishlist = "INSERT INTO wishlist (userID, artworkID) VALUES ($uid, $artworkID);";
+                                    $add = mysqli_query($conn, $addToWishlist);
+                                    if($add){
+                                        echo '<script>alert("successfully added")</script>';
+                                    }else{
+                                        echo '<script>alert("record = 0 but didnt add")</script>';
+                                    }
+                                } else {
+
+                                    echo '<html><head><script>alert("item already in favs~" );</script></head></html>' .
+                                        "<meta http-equiv=\"refresh\" content=\"0;url=favorites.php\">";
+                                }
+                            }
+                            else {
+                                echo '<script>alert("the query has not been executed")';
+                            }
+                        }else{
+                            echo '<script>alert("you need to log in")';
                         }
-                    </script>
-                  </td>
-            <tr>
-                <?php
-                $checkExistenceSQL = "SELECT * FROM wishlist WHERE artworkID = $artworkID AND userID = ".$_SESSION['uid'].";";
-                $check = mysqli_query($conn, $checkExistenceSQL);
-                if($check){
-                    if($row = mysqli_fetch_assoc($check)){
-                        echo"<td> this item is already in your fav list~</td>";
                     }
-                }else{
-                    echo'<script>alert("sql not executed")</script>';
-                }
-                ?>
+
+                    ?>
+                  </td>
             </tr>
+<!--            -->
+<!--                --><?php
+//                $checkExistenceSQL = "SELECT * FROM wishlist WHERE artworkID = $artworkID AND userID = ".$_SESSION['uid'].";";
+//                $check = mysqli_query($conn, $checkExistenceSQL);
+//                if($check){
+//                    if($row = mysqli_fetch_assoc($check)){
+//                        echo"<td> this item is already in your fav list~</td>";
+//                    }
+//                }else{
+//                    echo'<script>alert("sql not executed")</script>';
+//                }
+//                ?>
+
         </table>
     </div>
 </section>
 
 
-<?php //This PHP is for addCarts() only.
-if(isset($_POST['addFavs()'])) {
-    // NEED AN IF STATEMENT
-    if(!$_SESSION['username']){
-        echo '<script>alert("go log in first~")</script>';
-    }else if ($_SESSION['username'] && $_SESSION['password']) {
-        //已经登陆了
-        //If ->不能重复添加元素
-        //echo '<script>alert("reached here")</script>';
-        $uid = $_SESSION['uid'];
-        //echo $uid;
-        $record = "SELECT * FROM wishlist WHERE userID = $uid AND artworkID = $artworkID;";
-        //echo $record;
-        $getRecord = mysqli_query($conn, $record);
-        $numOfR = mysqli_num_rows($getRecord);
-        if ($getRecord) {
-            if ($numOfR == 0) {
-                $addToWishlist = "INSERT INTO wishlist (userID, artworkID) VALUES ($uid, $artworkID);";
-                $add = mysqli_query($conn, $addToWishlist);
-                if($add){
-                    echo '<script>alert("successfully added")</script>';
-                }else{
-                    echo '<script>alert("record = 0 but didnt add")</script>';
-                }
-            } else {
 
-                echo '<html><head><script>alert("item already in favs~" );</script></head></html>' .
-                    "<meta http-equiv=\"refresh\" content=\"0;url=favorites.php\">";
-            }
-        }
-        else {
-            echo '<script>alert("the query has not been executed")';
-        }
-    }else{
-        echo '<script>alert("you need to log in")';
-    }
-}
-
-?>
 
 <!--        <img src="img/59.jpg" style = "resize: both; height: 320px; width: 272px;position: relative; left: 150px">-->
 
